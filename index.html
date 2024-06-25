@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        .typing::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        #switch {
+            visibility: hidden;
+            clip: rect(0 0 0 0);
+            position: absolute;
+            left: 9999px;
+        }
+
+        .switch {
+            display: block;
+            width: 130px;
+            height: 60px;
+            margin: 70px auto;
+            position: relative;
+            background: #ced8da;
+            background: linear-gradient(left, #ced8da 0%, #d8e0e3 29%, #ccd4d7 34%, #d4dcdf 62%, #fff9f4 68%, #e1e9ec 74%, #b7bfc2 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ced8da', endColorstr='#b7bfc2', GradientType=1);
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+            border-radius: 0.35em;
+            box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.7),
+                inset 0 2px 0 rgba(255, 255, 255, 0.6),
+                inset 0 -1px 0 1px rgba(0, 0, 0, 0.3),
+                0 8px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .switch:before {
+            display: block;
+            position: absolute;
+            left: -35px;
+            right: -35px;
+            top: -25px;
+            bottom: -25px;
+            z-index: -2;
+            content: "";
+            border-radius: 0.4em;
+            background: #d5dde0;
+            background: linear-gradient(#d7dfe2, #bcc7cd);
+            box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6),
+                inset 0 -1px 1px 1px rgba(0, 0, 0, 0.3),
+                0 0 8px 2px rgba(0, 0, 0, 0.2),
+                0 2px 4px 2px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            transition: all 0.2s ease-out;
+        }
+
+        .switch:after {
+            content: "";
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #788b91;
+            margin-top: -8px;
+            z-index: -1;
+            box-shadow: inset 0 -1px 8px rgba(0, 0, 0, 0.7),
+                inset 0 -2px 2px rgba(0, 0, 0, 0.2),
+                0 1px 0 white,
+                0 -1px 0 rgba(0, 0, 0, 0.5),
+                -47px 32px 15px 13px rgba(0, 0, 0, 0.25);
+        }
+
+        #switch:checked~.switch {
+            background: #b7bfc2;
+            background: linear-gradient(to right, #b7bfc2 0%, #e1e9ec 26%, #fff9f4 32%, #d4dcdf 38%, #ccd4d7 66%, #d8e0e3 71%, #ced8da 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b7bfc2', endColorstr='#ced8da', GradientType=1);
+        }
+
+        #switch:checked~.switch:after {
+            background: #b1ffff;
+            box-shadow: inset 0 -1px 8px rgba(0, 0, 0, 0.7),
+                inset 0 -2px 2px rgba(0, 0, 0, 0.2),
+                0 1px 0 white,
+                0 -1px 0 rgba(0, 0, 0, 0.5),
+                -110px 32px 15px 13px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body class="bg-Misty-Gray">
+
+    <header class="flex">
+        <nav class="fixed w-screen shadow-lg">
+            <ul class="flex justify-end gap-20 m-5 text-2xl cursor-pointer">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#linguagens">Linguagens</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-16 p-4">
+
+
+        <input name="switch" id="switch" type="checkbox">
+        <label class="switch" for="switch"></label>
+
+        <section id="home" class="text-left py-20" data-aos="fade-up">
+            <h1 class="text-4xl font-bold">Olá, Eu sou Angel Santana</h1>
+            <p class="mt-4 text-lg">
+                <span id="typing-text" class="typing text-2xl"></span>
+            </p>
+            <div>
+                <img src="./src/images/WhatsApp Image 2024-05-09 at 17.23.09.jpeg" alt=""
+                    class="absolute mt-10 rounded-full border-4 border-black w-52">
+            </div>
+            <div class="flex justify-end items-end" data-aos="fade-up">
+                <img src="./src/images/My Room.png" alt="" class="w-800">
+            </div>
+        </section>
+
+        <section id="sobre" class="py-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold">Sobre Mim</h2>
+            <p class="mt-4 text-lg">Sou desenvolvedor front-end com experiência em HTML, CSS, JavaScript e React. Tenho
+                paixão por criar interfaces de usuário bonitas e funcionais.</p>
+        </section>
+
+        <section id="projetos" class="py-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold">Projetos</h2>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exemplo de projeto -->
+                <div class="border rounded-lg shadow-lg p-4">
+                    <img src="./src/images/projeto1.png" alt="Projeto 1" class="w-full h-48 object-cover">
+                    <h3 class="mt-4 text-2xl font-bold">Projeto 1</h3>
+                    <p class="mt-2 text-lg">Descrição do projeto 1.</p>
+                </div>
+                <!-- Adicione mais projetos aqui -->
+            </div>
+        </section>
+
+        <section id="linguagens" class="py-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold">Linguagens e Ferramentas</h2>
+            <ul class="mt-4 text-lg list-disc list-inside">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Tailwind CSS</li>
+                <!-- Adicione mais habilidades aqui -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="text-center py-10 bg-gray-800 text-white">
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./src/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animations happen only once
+            duration: 800, // Animation duration
+            easing: 'ease-in-out', // Easing function for animation
+        });
+    </script>
+</body>
+
+</html>
